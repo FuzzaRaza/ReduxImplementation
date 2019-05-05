@@ -4,18 +4,20 @@ import { View } from "react-native";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 //Get Reducers
-import reducers from "./reducers/index";
+import reducers from "./reducers";
 //Get the Header Component
-import { Header } from "./components";
+import { Header } from "./Components/common";
+
+import LibraryList from "./Components/LibraryList";
 // import LibraryList from "./components/LibraryList";
 
 const App = () => {
 return (
 // Provider can only have one child component
 <Provider store={createStore(reducers)}>
-<View>
+<View style={{ flex: 1 }}>
 <Header headerText="Redux Demo -- Tech Stack" />
-{/* <LibraryList /> */}
+{<LibraryList />}
 </View>
 </Provider>
 );
